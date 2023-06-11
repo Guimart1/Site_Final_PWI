@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Home</title>
+</head>
+<body style="background-image: url(./img/rm222-mind-22.jpg); background-size: cover">
+    <header>
+        <div class="logo">
+            <img src="./img/Etec Logo.jpg" class="logo-icon">
+        </div>
+        <input type="checkbox" id="nav_check" hidden>
+        <nav>
+            <div class="logo">
+                <img src="./img/Etec Logo.jpg" class="logo-icon">
+            </div>
+            <ul>
+                <li><a href="" class="active">Home</a></li>
+                <li><a href="">Manutenção do Laboratório</a></li>
+                <li><a href="">Agendamento de Anfieatro</a></li>
+                <li><a href="">Empréstimo de Equipamento</a></li>
+                <li><a href="">Chegada Atrasada e Saída</a></li>
+                <li><a href="">Controle de Estoque</a></li>
+                <li><a href="">Feedback</a></li>
+            </ul>
+        </nav>
+        <label for="nav_check" class="resp">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+    </header>
+    <div class="desc"> 
+        <img src="./img/etec-guaianazes-scaled.jpg">
+        <div class="title-desc">
+            <h1>Bem-vindo á Etec Guaianases</h1>
+            <p>
+                "Texto apresentação"<br>
+                Participe dos principais eventos do momento!
+            </p>
+            <div class="btnCaipira" id="arraial" onmouseover="Abrir()" onmouseout="Fechar()">
+                <img src="./img/festa.jfif" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="desc2">
+        <div class="texto-desc">
+            <p>
+                "texto descrição"
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                when an unknown printer took a galley of type and scrambled it to make a type 
+                specimen book. It has survived not only five centuries, but also the leap into 
+                electronic typesetting, remaining essentially unchanged.</p>
+        </div>
+        <div class="rede-social">
+            <ul>
+                <li>Rede social-1</li>
+                <li>Rede social-2</li>
+                <li>Rede social-3</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        let arraial = document.getElementById("arraial")
+        function Abrir() {
+            arraial.classList.add("btnCaipira-ativado");
+            arraial.classList.remove("btnCaipira-descanso");
+        }
+        function Fechar() {
+            arraial.classList.add("btnCaipira-descanso");
+            arraial.classList.remove("btnCaipira-ativado");
+        }
+
+        
+        
+
+    </script>
+</body>
+</html>

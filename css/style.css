@@ -1,0 +1,357 @@
+@font-face {
+    font-family: 'Geomatrix Medium';
+    src: url(../font/Geomatrix\ Medium.ttf) format(truetype);
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+html, body{
+    font-family: 'Geomatrix Medium';
+}
+.logo-icon{
+    width: 95%;
+}
+header{
+    width: 80%;
+    height: 70px;
+    background: #fefefe;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    border-radius: 0 0 10px 10px;
+    margin: 0 auto;
+    transition: 1s;
+}
+header:hover {
+    transition: 0.5s;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+
+.logo{
+    width: 70px;
+    margin-top: 8px;
+}
+nav .logo{
+    display: none;
+}
+nav ul{
+    display: flex;
+}
+nav ul li a{
+    color: #212526;
+    display: block;
+    margin: 0 2px;
+    font-weight: 600;
+    padding: 8px 18px;
+    transition: 0.2s;
+    border-radius: 30px;
+}
+nav ul li a:hover{
+    background: #f6f4ff;
+}
+nav ul li a.active{
+    background: #675cff;
+    color: #fff;
+}
+.resp{
+    display: none;
+    height: fit-content;
+    cursor: pointer;
+    padding: 3px 8px;
+    border-radius: 5px;
+    transition: 0.2s;
+}
+.resp:hover{
+    background: #f6f4ff;
+}
+.resp div{
+    width: 30px;
+    height: 2px;
+    margin: 6px 0;
+    background: #212526;
+}
+@media only screen and (max-width: 3000px) {
+    header{
+        width: 90%;
+        padding: 0 20px;
+    }
+    nav{
+        position: absolute;
+        left: -300px;
+        top: 0;
+        z-index: 999;
+        width: 280px;
+        height: 100vh;
+        background-color: #fefefe;
+        transition: 0.2s;
+        box-shadow: 2px 0 20px 0 rgba(0, 0, 0, 0.05);
+    }
+    #nav_check:checked ~ nav{
+        left: 0;
+    }
+    nav .logo{
+        display: block;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        margin-left: 30px;
+    }
+    nav ul li a{
+        margin-bottom: 5px;
+        padding: 10px 15px;
+        border-radius: 5px;
+    }
+    nav ul{
+        display: block;
+        padding: 0 20px;
+        margin-top: 30px;
+    }
+    .resp{
+        display: block;
+    }
+}
+/*Tela Inicial*/
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-area{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.btn-area h1{
+    margin: 60px;
+    font-size: 50px;
+}
+#btnProf{
+    border: none;
+    background-color: #675cff;
+    padding: 20px;
+    border-radius: 15px;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 60px;
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.6);
+}
+#btnAlu{
+    border: none;
+    background-color: #675cff;
+    padding: 20px 40px;
+    border-radius: 15px;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.6);
+}
+/* Tela de LOGIN */
+.area-login{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fefefe;
+    width: 550px;
+    height: 550px;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 3px 3px 30px 5px rgba(0, 0, 0, 0.6);
+}
+.login form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.login input{
+    margin-top: 10px;
+    background-color: #e8e5f1;
+    color: #212526;
+    border: none;
+    height: 30px;
+    border-radius: 8px;
+    outline: none;
+    padding: 20px;
+}
+.login::placeholder{
+    color: #212526;
+    font-size: 15px;
+}
+form [type="submit"]{
+    display: block;
+    background-color: #675cff;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #fff;
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.adjust{
+    display: flex;
+    justify-content: center;
+}
+#title h2{
+    font-size: 50px;
+}
+.login img{
+    width: 180px;
+}
+/*Animação de login */
+.popup1 {
+    position: absolute;
+    left: 30%;
+    top: -100%;
+    transform: translate(-50%, -50%) scale(0.1);
+    transition: transform 0.4s, top 0.4s;
+}
+.popup1-ativo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    visibility:visible;
+    transform: translate(-50%, -50%) scale(1.2);
+
+}
+.popup2 {
+    position: absolute;
+    left: 30%;
+    top: -100%;
+    transform: translate(-50%, -50%) scale(0.1);
+    transition: transform 0.4s, top 0.4s;
+}
+.popup2-ativo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    visibility:visible;
+    transform: translate(-50%, -50%) scale(1.2);
+}
+/*Caixa de conteudo 1*/
+.desc {
+    position: absolute;
+    left: 5%;
+    width: 90%;
+    top: 12%;
+    height: 55%;
+    border-radius: 10px;
+    font-size: 1.2em;
+    background-color: #fefefe;
+    display: flex;
+    transition: 0.5s;
+}
+.title-desc {
+    width: 100%;
+    padding: 1% 0% 0px 7%;
+    font-size: 1.2em;
+}
+.desc img {
+    width: 40%;
+    border-radius: 10px 0px 0px 10px;
+}
+.desc:hover {
+    transition: 0.5s;
+    box-shadow: 0px 3px 10px -1px rgba(69, 53, 69, 0.82);
+    transform: translateY(-1px);
+}
+/*efeito do cartaz de evento*/
+.btnCaipira {
+    border: none;
+    width: 400px;
+    height: 250px;
+    margin-top: 20px;
+    background-image: url(../img/evento.jpg);
+    background-size: cover;
+    border-radius: 15px;
+    z-index: 9999;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-left: 15%;
+}
+.btnCaipira img {
+    position: relative;
+    width: 100%;
+    height: 0%;
+    border-radius: 15px;
+    margin-left: 0%;
+    z-index: 9999;
+    border-radius: 0px;
+    visibility: hidden;
+}
+.btnCaipira-ativado img{
+    width: 100%;
+    height: 200%;
+    margin-left: 0;
+    border-radius: 15px;
+    visibility: visible;
+    transition: 0.5s;
+    z-index: 9999;
+    box-shadow: 0px 3px 10px -1px rgba(69, 53, 69, 0.82);
+}
+.btnCaipira-descanso img {
+    width: 100%;
+    height: 2%;
+    margin-left: 0%;
+    z-index: 9999;
+    border-radius: 15px;
+    visibility: hidden;
+    transition: 0.5s;
+}
+/*Div de Conteudo 2 */
+.desc2 {
+    position: absolute;
+    left: 5%;
+    width: 90%;
+    top: 70%;
+    height: 27%;
+    border-radius: 10px;
+    font-size: 1.2em;
+    background-color: #fefefe;
+    display: flex;
+    transition: 0.5s;
+    z-index: -1;
+}
+.desc2:hover {
+    transition: 0.5s;
+    box-shadow: 0px 3px 10px -1px rgba(69, 53, 69, 0.82);
+    transform: translateY(-1px);
+}
+.rede-social {
+    height: 100%;
+    width: 35%;
+    margin-left: 0;
+    font-size: 1.2em;
+    border-radius: 0px 10px 10px 0px;
+    background-color: rgb(79, 44, 208);
+    color: #fff;
+}
+.desc2 p {
+    padding: 10px 10px 5px 15px;
+}
+.texto-desc {
+    width: 50%;
+    margin-top: 1%;
+    margin-left: 2%;
+    margin-right: 20%;
+}
+.rede-social ul{
+    padding: 14% 14% 14% 34%;
+}

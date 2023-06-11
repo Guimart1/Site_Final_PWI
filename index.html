@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Professor e aluno</title>
+</head>
+<body style="overflow-y: hidden; background-color: beige; background: linear-gradient(90deg, rgba(227,217,232,1) 25%, rgba(199,182,230,1) 92%);">
+    <div class="popup1" id="popup1">
+        <section class="area-login">
+            <div class="login">
+                <img src="./img/Etec Logo.jpg" alt="Etec Logo">
+                <div id="title">
+                    <h2>Login</h2>
+                </div>
+                <form action="./HomeAluno.html">
+                    <input type="text" name="Código da etec" placeholder="Código da etec">
+                    <input type="text" name="RM" placeholder="RM">
+                    <input type="password" name="senha" placeholder="Senha">
+                    <div class="adjust"><input type="submit" value="Login"></div>
+                </form>
+            </div>
+        </section>
+    </div>
+    <div class="popup2" id="popup2">
+        <section class="area-login">
+            <div class="login">
+                <img src="./img/Etec Logo.jpg" alt="Etec Logo">
+                <div id="title">
+                    <h2>Login</h2>
+                </div>
+                <form action="./HomeProfessor.html">
+                    <input type="text" name="Código da etec" placeholder="Código da etec">
+                    <input type="text" name="nome" placeholder="Login" autofocus>
+                    <input type="password" name="senha" placeholder="Senha">
+                    <div class="adjust"><input type="submit" value="Login"></div>
+                </form>
+            </div>
+        </section>
+    </div>
+    <div id="fundo">
+        <div class="btn-area">
+            <h1>Você é professor ou aluno?</h1>
+            <div class="btn">
+                <button onclick="abrirPopup2()" id="btnProf">Professor</button>
+                <button onclick="abrirPopup1()" id="btnAlu">Aluno</button>
+        </div>
+        </div>
+    </div>
+    
+    <script>
+        let popup2 = document.getElementById("popup1");
+        let fundo = document.getElementById("fundo")
+        function abrirPopup1() {
+            popup2.classList.add("popup1-ativo");
+            fundo.classList.remove("btn-area");
+        }
+        let popup1 = document.getElementById("popup2");
+        function abrirPopup2() {
+            popup1.classList.add("popup2-ativo");
+            fundo.classList.remove("btn-area");
+        }
+    </script>
+</body>
+</html>
