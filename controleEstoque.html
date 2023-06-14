@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Controle de Estoque</title>
+</head>
+
+<body style="background-image: url(./img/rm222-mind-22.jpg); background-size: cover">
+    <header>
+        <div class="logo">
+            <img src="./img/Etec Logo.jpg" class="logo-icon">
+        </div>
+        <input type="checkbox" id="nav_check" hidden>
+        <nav>
+            <div class="logo">
+                <img src="./img/Etec Logo.jpg" class="logo-icon">
+            </div>
+            <ul>
+                <li><a href="HomeProfessor.html">Home</a></li>
+                <li><a href="manutencaoLab.html">Manutenção do Laboratório</a></li>
+                <li><a href="agendamentoAnfi.html">Agendamento de Anfieatro</a></li>
+                <li><a href="emprestimoEqui.html">Empréstimo de Equipamento</a></li>
+                <li><a href="chegadaAtrasada.html">Chegada Atrasada e Saída</a></li>
+                <li><a href="controleEstoque.html" class="active">Controle de Estoque</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+            </ul>
+        </nav>
+        <label for="nav_check" class="resp">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+    </header>
+    <div class="box">
+      <form id="form">
+        <table>
+            <caption>Cadastro de novos produtos</caption>
+            <!--Nome do produto-->
+            <tr>
+                <td >Nome do produto:</td>
+                <td><input id="txtNomeProduto" type="text"></td>
+            </tr>
+            <!--Código do produto-->
+            <tr>
+                <td class="alinharRotulos">Código do produto:</td>
+                <td><input id="txtCodProduto" type="text"></td>
+            </tr>
+            <!--Quantidade do produto-->
+            <tr>
+                <td class="alinharRotulos">Quantidade do produto:</td>
+                <td>
+                    <select id="qtidadeProduto">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </td>
+            </tr>
+            <!--Botoes-->
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="button" value="Cadastrar" class="alinhaBtns" onclick="validarProduto('txtNomeProduto','txtCodProduto','qtidadeProduto')">
+                    <input type="button" value="Ver estoque" class="alinhaBtns" onclick="abrirEstoque()">
+                    <input type="reset" value="Limpar" class="alinhaBtns">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <div id="estoque">
+        <div class="estoque-1">
+
+        </div>
+    </div>
+        
+    </div>
+    <script>
+        let estoque = document.getElementById("estoque");
+        let formulario = document.getElementById("form");
+        function abrirEstoque() {
+            estoque.classList.add("estoque-ativado");
+            formulario.classList.add("form-estoque");
+        }
+    </script>
+</body>
+
+</html>
