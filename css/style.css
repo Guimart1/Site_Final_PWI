@@ -367,7 +367,7 @@ form [type="submit"]{
     display: flex;
     transition: 0.5s;
 }
-#form {
+.formulario {
     position: absolute;
     left: 30%;
     width: 40%;
@@ -378,9 +378,9 @@ form [type="submit"]{
     justify-items: center;
     background-color: #c4a1db;
     display: flex;
-    transition: 0.5s;
+    transition: 1.5s;
 }
-.form-estoque {
+.form-esquerda {
     position: absolute;
     left: 10%;
     width: 40%;
@@ -391,7 +391,7 @@ form [type="submit"]{
     justify-items: center;
     background-color: #c4a1db;
     display: flex;
-    transition: 0.5s;
+    transition: 1.5s;
 }
 table {
     margin-left: 10%;
@@ -410,7 +410,7 @@ table {
     width: 30%;
     border-radius: 10px;
     background-color: #c4a1db;
-    transition: 0.5s;
+    transition: 1s;
 }
 .estoque-ativado {
     position: absolute;
@@ -421,8 +421,11 @@ table {
     width: 30%;
     border-radius: 10px;
     background-color: #c4a1db;
-    transition: 0.5s;
+    transform: scale(1);
+    transition: 1s;
 }
+.btn-estoque {
 
+}
 
 

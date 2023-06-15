@@ -36,60 +36,83 @@
         </label>
     </header>
     <div class="box">
-      <form id="form">
-        <table>
-            <caption>Cadastro de novos produtos</caption>
-            <!--Nome do produto-->
-            <tr>
-                <td >Nome do produto:</td>
-                <td><input id="txtNomeProduto" type="text"></td>
-            </tr>
-            <!--Código do produto-->
-            <tr>
-                <td class="alinharRotulos">Código do produto:</td>
-                <td><input id="txtCodProduto" type="text"></td>
-            </tr>
-            <!--Quantidade do produto-->
-            <tr>
-                <td class="alinharRotulos">Quantidade do produto:</td>
-                <td>
-                    <select id="qtidadeProduto">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                    </select>
-                </td>
-            </tr>
-            <!--Botoes-->
-            <tr>
-                <td colspan="2" align="center">
-                    <input type="button" value="Cadastrar" class="alinhaBtns" onclick="validarProduto('txtNomeProduto','txtCodProduto','qtidadeProduto')">
-                    <input type="button" value="Ver estoque" class="alinhaBtns" onclick="abrirEstoque()">
-                    <input type="reset" value="Limpar" class="alinhaBtns">
-                </td>
-            </tr>
-        </table>
-    </form>
-    <div id="estoque">
-        <div class="estoque-1">
-
+        <form id="form" class="formulario">
+            <table>
+                <caption>Cadastro de novos produtos</caption>
+                <!--Nome do produto-->
+                <tr>
+                    <td >Nome do produto:</td>
+                    <td><input id="txtNomeProduto" type="text"></td>
+                </tr>
+                <!--Código do produto-->
+                <tr>
+                    <td class="alinharRotulos">Código do produto:</td>
+                    <td><input id="txtCodProduto" type="text"></td>
+                </tr>
+                <!--Quantidade do produto-->
+                <tr>
+                    <td class="alinharRotulos">Quantidade do produto:</td>
+                    <td>
+                        <select id="qtidadeProduto">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </td>
+                </tr>
+                <!--Botoes-->
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="button" value="Cadastrar" class="alinhaBtns" onclick="validarProduto('txtNomeProduto','txtCodProduto','qtidadeProduto')">
+                        <input type="button" value="Ver estoque" class="btn-estoque" id="btn-estoque" onclick="contador()">
+                        <input type="reset" value="Limpar" class="alinhaBtns">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <div id="esticar" class="estoque-1">
+            <p> oii</p>
         </div>
-    </div>
         
     </div>
     <script>
-        let estoque = document.getElementById("estoque");
+        let esticar = document.getElementById("esticar");
         let formulario = document.getElementById("form");
+        const botaoEst = document.getElementById("btn-estoque");
+        var aberto = 0;
+        function contador(){
+            if (aberto == 0) {
+                abrirEstoque();
+                aberto = 1;
+            }else {
+                fecharEstoque();
+                aberto = 0;
+            }
+        }
+    
         function abrirEstoque() {
-            estoque.classList.add("estoque-ativado");
-            formulario.classList.add("form-estoque");
+            esticar.classList.add("estoque-ativado");
+            formulario.classList.add("form-esquerda");
+            esticar.classList.remove("estoque-1");
+            formulario.classList.remove("formulario");
+            botaoEst.value = "Fechar estoque";
+            var aberto = true;
+        }
+        function fecharEstoque() {
+            botaoEst.value = "Ver estoque";
+            esticar.classList.add("estoque-1");
+            formulario.classList.add("formulario");
+            esticar.classList.remove("estoque-ativado");
+            formulario.classList.remove("form-esquerda");
+            botaoEst.value = "Ver estoque";
+            var aberto = false
         }
     </script>
 </body>
