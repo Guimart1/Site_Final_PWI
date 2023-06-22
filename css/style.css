@@ -479,3 +479,32 @@ table {
     transform: translateY(5px);
     transition: 0.8s;
 }
+.formAnfi {
+    position: absolute;
+    height: 70%;
+    width: 45%;
+    background-color: #fefefe;
+    left: 50%;
+    top: 11%;
+    border-radius: 10px;
+}
+.posAnfi {
+    margin-left: 10%;
+    margin-top: 6%;
+    font-size: 25px;
+}
+.posAnfi button{
+    background-color: #675cff;
+    color: #fefefe;
+}
+.titleAnfi {
+    position: absolute;
+    text-align: center;
+    left: 25%;
+    top: 11%;
+    width: 50%;
+    height: 5%;
+    border-radius: 10px;
+    background-color: #fefefe;
+    z-index: 9999;
+}

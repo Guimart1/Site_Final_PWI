@@ -20,7 +20,7 @@
             <ul>
                 <li><a href="HomeProfessor.html">Home</a></li>
                 <li><a href="manutencaoLab.html">Manutenção do Laboratório</a></li>
-                <li><a href="agendamentoAnfi.html" class="active">Agendamento de Anfieatro</a></li>
+                <li><a href="agendamentoAnfi.html" class="active">Agendamento de Anfiteatro</a></li>
                 <li><a href="emprestimoEqui.html">Empréstimo de Equipamento</a></li>
                 <li><a href="chegadaAtrasada.html">Chegada Atrasada e Saída</a></li>
                 <li><a href="controleEstoque.html">Controle de Estoque</a></li>
@@ -33,6 +33,52 @@
             <div></div>
         </label>
     </header>
-    <div class="box"></div>
+    <div class="titleAnfi">
+        <h1>Faça o agendamento do anfiteatro</h1>
+    </div>
+    <div class="formAnfi">
+        <div class="posAnfi">
+            <div>
+                <label>Nome: </label>
+                <input type="text" name="">
+            </div>
+            <div>
+                <label>Matéria: </label>
+                <input type="text" name=""> 
+            </div>
+            <div>
+                <label>Turma: </label>
+                <input type="text" name=""> 
+            </div>
+            <div>
+                <label>Periodo: </label>
+                <select>
+                    <option value="1">Manhã</option>
+                    <option value="2">Tarde</option>
+                    <option value="3">Noite</option>
+                </select>
+            </div>
+            <div>
+                <label>Equipamentos utilizados: </label>
+                <button type="button">Escolha o equipamento</button>
+            </div>
+            <div>
+                <label>Selecione a data:</label>
+                <input type="date">
+            </div>
+            <div>
+                <label>Horario de ínicio:</label>
+                <input type="time">
+            </div>
+            <div>
+                <label>Horario de saída:</label>
+                <input type="time">
+            </div>
+            <div>
+                <button>Enviar</button>
+                <button>Limpar</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
