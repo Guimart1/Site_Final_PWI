@@ -335,6 +335,7 @@ form [type="submit"]{
     box-shadow: 0px 3px 10px -1px rgba(69, 53, 69, 0.82);
     transform: translateY(-1px);
 }
+/*Caixa das redes sociais*/
 .rede-social {
     height: 100%;
     width: 31%;
@@ -343,6 +344,26 @@ form [type="submit"]{
     border-radius: 0px 10px 10px 0px;
     background-color: rgb(79, 44, 208);
     color: #fff;
+}
+.rede-social ul{
+    padding: 2% 6% 1% 32%;
+}
+.rede-social li {
+    font-size: 1.3em;
+}
+.rede-social a {
+    text-decoration: none;
+    color: #fefefe;
+}
+.imgSocial {
+    display: flex;
+    flex-direction: row;
+    margin-left: 20%;
+    margin-top: 0;
+}
+.imgSocial img {
+    width: 70px;
+    margin-left: 30px;
 }
 .desc2 p {
     padding: 10px 10px 5px 15px;
@@ -353,9 +374,7 @@ form [type="submit"]{
     margin-left: 2%;
     margin-right: 20%;
 }
-.rede-social ul{
-    padding: 14% 14% 14% 34%;
-}
+
 .box{
     position: absolute;
     left: 5%;
@@ -371,16 +390,25 @@ form [type="submit"]{
 /*Formulario central*/
 .formulario {
     position: absolute;
-    left: 30%;
-    width: 40%;
+    left: 25%;
+    width: 60%;
     top: 5%;
     height: 90%;
     border-radius: 10px;
-    font-size: 1.2em;
+    font-size: 1.6em;
     justify-items: center;
-    background-color: #b783dd;
+    background-color: #fefdff;
     display: flex;
-    transition: 1.5s;
+    transition: 1s;
+}
+.formulario input {
+    background-color: #dde0fd;
+    border-radius: 20px;
+    height: 30px;
+}
+.formulario select {
+    border-radius: 20px;
+    background-color: #dde0fd;
 }
 .form-esquerda {
     position: absolute;
@@ -393,7 +421,7 @@ form [type="submit"]{
     justify-items: center;
     background-color: #8677df;
     display: flex;
-    transition: 1.5s;
+    transition: 1s;
 }
 table {
     margin-left: 10%;
@@ -427,12 +455,23 @@ table {
     transform: scale(1);
     transition: 1s;
 }
+.titleCursos {
+    position:  absolute;
+    top: 100%;
+    left: 20%;
+    height: 6%;
+    width: 60%;
+    background-color: #fefefe;
+    text-align: center;
+    border-radius: 10px;
+    transition: 0.5s;
+}
 /*Grid contendo cursos da etec*/
 .grid-cursos {
     position: absolute;
     width: 90%;
-    height: 850px;
-    top: 93%;
+    height: 110%;
+    top: 109%;
     left: 5%;
     display: flex;
     flex-direction: row;
@@ -442,11 +481,11 @@ table {
 }
 /*Padrão para box dos cursos*/
 .curso-1 {
-    height: 50%;
+    height: 40%;
     width: 30%;
     background-color: #fff;
     border-radius: 10px;
-    margin-top: 4%;
+    margin-top: 0%;
     text-align: center;
     font-size: 20px;
     transition: 0.5s;
@@ -465,6 +504,10 @@ table {
 .curso-1 p {
     transition: 1s;
 }
+.curso-1 a {
+    text-decoration: none;
+    color: #212526;
+}
 /*Definindo animação ao passar mouse*/
 .curso-1:hover {
     box-shadow: 0px 3px 10px -1px rgba(69, 53, 69, 0.82);
@@ -479,23 +522,103 @@ table {
     transform: translateY(5px);
     transition: 0.8s;
 }
+/* desc sem hover*/
+.descmanutencao {
+    position: absolute;
+    left: 5%;
+    width: 90%;
+    top: 12%;
+    height: 55%;
+    font-size: 1.2em;
+    background-color: #ffffff;
+    display: flex;
+    transition: 0.5s;
+    margin-top: 25px;
+    
+}
+.descmanutencao textarea {
+    resize: none;
+}
+.descmanutencao input {
+    border-radius: 20px;
+    padding: 5px;
+    font-weight: bold;
+    background-color: #f1f1fd;
+} 
+/* popup de enviado */
+.popuptheo {
+    visibility: hidden; 
+    width: 400px;
+    background-color: #ffffff;
+    border-radius: 6px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 50%)scale(0.1);
+    text-align: center;
+    padding: 30px 30px 30px;
+    box-shadow: 5px 5px 10px #7a19a04d;
+    transition: transform 0.4s, top o.4s;
+}
+.open-popuptheo {
+    visibility: visible;
+    top: 10%;
+    transform: translate(-50%, 50%) scale(1);   
+    transition: transform 0.4s, top o.4s;
+}
+/*Caixa principal/fundo do formulario*/
 .formAnfi {
     position: absolute;
     height: 70%;
-    width: 45%;
+    width: 90%;
     background-color: #fefefe;
-    left: 50%;
+    left: 5%;
     top: 11%;
     border-radius: 10px;
-}
-.posAnfi {
-    margin-left: 10%;
-    margin-top: 6%;
     font-size: 25px;
+    transition: 0.5s;
+}
+.formAnfi:hover {
+    box-shadow: 0px 3px 10px -1px rgba(69, 53, 69, 0.82);
+    transition: 0.5s;
+    transform: translateY(-1px);
+}
+/*Posicionamento do formulario do anfiteatro*/
+.posAnfi {
+    margin-left: 5%;
+    margin-top: 4%;
+    transition: 0.5s;
 }
 .posAnfi button{
     background-color: #675cff;
-    color: #fefefe;
+    color: #000000;
+    font-weight: bold;
+    height: 50px;
+    width: 100px;
+    background-color: rgb(194, 150, 235);
+    border-radius: 15px;
+    transition: 0.5s;
+}
+.posAnfi button:hover {
+    background-color: rgb(220, 191, 248);
+    pointer-events: visible;
+    transition: 0.5s;
+}
+.posAnfi input {
+    border-radius: 20px;
+    padding: 5px;
+    background-color: #f1f1fd;
+    font-weight: bold;
+}
+.posAnfi select{
+    border-radius: 10px;
+    padding: 5px;
+    font-weight: bold;
+}
+.posAnfi select option {
+    background-color: #f1f1fd;
+    border-radius: 15px;
+    font-weight: bold;
 }
 .titleAnfi {
     position: absolute;
@@ -507,4 +630,136 @@ table {
     border-radius: 10px;
     background-color: #fefefe;
     z-index: 9999;
+}
+.posAnfi div {
+    padding: 10px;
+}
+.anfiButton {
+    margin-left: 0%;
+    display: flex;
+    flex-direction: row;
+    font-weight: bold;
+}
+.anfiButton button {
+    margin-left: 10%;
+}
+.anfiEquip button{
+    height: 30px;
+    width: 250px;
+    background-color: #c5b5fc;
+}
+.anfiEquip button:hover {
+    background-color: #d27dff;
+}
+.imgAnfi {
+    position: absolute; 
+    top: 5%;
+    margin-left: 5%;
+    left: 50%;
+    transition: 1s;
+}
+.imgAnfi-baixo {
+    top: 40%;
+    left: 70%;
+    visibility: hidden;
+    transition: 1s;
+    scale: 0.01;
+}
+/*Seleção dos equipamentos utilizados desativado*/
+.equipamentos {
+    position: absolute;
+    top: 0%;
+    left: 48%;
+    display: flex;
+    flex-direction: row;
+    width: 0%;
+    height: 0%;
+    font-size: 0;
+    justify-content: space-between;
+    user-select: none;
+    visibility: hidden;
+    transition: 1s;
+}
+.equipamentos h2 {
+    font-size: 0px;
+}
+/*Seleçao dos equipamentos ativada*/
+.equipamentos-ativado h2 {
+    font-size: 40px;
+}
+.equipamentos-ativado {
+    top: 20%;
+    height: 80%;
+    width: 50%;
+    visibility: visible;
+    transition: 1s;
+}
+/*Caixa contendo o tipo de equipamento utilizado*/
+.equip-1 {
+    width: 30%;
+    height: 80%;
+    background-color: #f1f1fd;
+    border-radius: 10px;
+    border: 3px solid #000000;
+    text-align: center;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.equip-1 img {
+    width: 90%;
+    transition: 0.5s;
+}
+.equip-1 h2 {
+    transition: 0.5s;
+}
+.equip-1:hover {
+    box-shadow: 1px 3px 5px 1px rgba(0,0,0,0.79);
+    transform: translateY(-1px);
+    transition: 0.5s;
+}
+.equip-1:hover h2 {
+    transform: translateY(-8px);
+    transition: 0.5s;
+}
+.equip-1:hover img {
+    transform: translateY(8px);
+    transition: 0.5s;
+}
+.equip-1-select {
+    box-shadow: 1px 3px 5px 1px rgba(0,0,0,0.79);
+    transform: translateY(-1px);
+    transition: 0.5s;
+}
+.check {
+    width: 40%;
+    margin-left: 30%;
+    visibility: hidden;
+    
+}
+.check-select {
+    visibility: visible;
+}
+#tdcols{
+    align-items: center;
+}
+.feed{
+    width: 70%;
+    height: 70%;
+}
+#btnLimpar {
+    display: block;
+    background-color: #675cff;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #fff;
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.btnEstoque {
+    margin-left: 30%;
+}
+.btnEstoque button {
+    border-radius: 10px;
 }
