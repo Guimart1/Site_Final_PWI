@@ -22,7 +22,7 @@
             <ul>
                 <li><a href="HomeProfessor.html">Home</a></li>
                 <li><a href="manutencaoLab.html">Manutenção do Laboratório</a></li>
-                <li><a href="agendamentoAnfi.html">Agendamento de Anfiteatro</a></li>
+                <li><a href="agendamentoAnfi.html">Agendamento do Anfiteatro</a></li>
                 <li><a href="emprestimoEqui.html">Empréstimo de Equipamento</a></li>
                 <li><a href="chegadaAtrasada.html">Chegada Atrasada e Saída</a></li>
                 <li><a href="controleEstoque.html" class="active">Controle de Estoque</a></li>
@@ -44,10 +44,14 @@
                     <td >Nome do produto:</td>
                     <td><input id="txtNomeProduto" type="text"></td>
                 </tr>
-                <!--Código do produto-->
+                <!--Nome do usuario-->
                 <tr>
-                    <td class="alinharRotulos">Código do produto:</td>
-                    <td><input id="txtCodProduto" type="text"></td>
+                    <td class="alinharRotulos">Nome do Usuario:</td>
+                    <td><input id="txtNomeUsuario" type="text"></td>
+                </tr>
+                <tr>
+                    <td class="alinharRotulos">Data de Cadastro:</td>
+                    <td><input id="txtDataCadastro" type="datetime-local"></td>
                 </tr>
                 <!--Quantidade do produto-->
                 <tr>
@@ -68,52 +72,81 @@
                     </td>
                 </tr>
                 <!--Botoes-->
+                
                 <tr>
-                    <td colspan="2" align="center">
-                        <input type="button" value="Cadastrar" class="alinhaBtns" onclick="validarProduto('txtNomeProduto','txtCodProduto','qtidadeProduto')">
-                        <input type="button" value="Ver estoque" class="btn-estoque" id="btn-estoque" onclick="contador()">
-                        <input type="reset" value="Limpar" class="alinhaBtns">
+                    <td colspan="2" id="tdcols">
+                        <div class="btnEstoque">
+                            <button type="submit" onclick="validarProduto('txtNomeProduto','txtNomeUsuario','txtDataCadastro','qtidadeProduto')">Enviar</button>
+                            <button type="reset" value="Limpar" id="btnLimpar">Limpar</button>
+                        </div>
                     </td>
                 </tr>
             </table>
         </form>
         <div id="esticar" class="estoque-1">
-            <p> oii</p>
+            <p onload="listarEstoque()"> </p>
         </div>
         
     </div>
     <script>
-        let esticar = document.getElementById("esticar");
-        let formulario = document.getElementById("form");
-        const botaoEst = document.getElementById("btn-estoque");
-        var aberto = 0;
-        function contador(){
-            if (aberto == 0) {
-                abrirEstoque();
-                aberto = 1;
-            }else {
-                fecharEstoque();
-                aberto = 0;
-            }
+    function validarProduto(idNomeProduto, idNomeUsuario, iddataCadastro, idqtidadeProduto) {
+        let produto = document.getElementById(idNomeProduto).value;
+        let nomeUsuario = document.getElementById(idNomeUsuario).value;
+        let data = document.getElementById(iddataCadastro).value;
+        let qtidade = document.getElementById(idqtidadeProduto).value;
+
+                if (produto == "")
+                    alert("Nome do produto não pode estar em branco. Favor preenchê-lo!");
+                else if (nomeUsuario == "")
+                    alert("Nome do Usuario não pode estar em branco. Favor preenchê-lo!");
+                else if (data == "")
+                        alert("A data fornecida não pode estar em branco. Favor preenchê-la!")
+                else cadastrarProduto(produto, nomeUsuario, data, parseInt(qtidade));
+}
+function cadastrarProduto(produto,nomeUsuario,data,qtidade) {
+    let novoProduto = {produto:produto, nomeUsuario:nomeUsuario, data:data, quantidade:qtidade};
+
+    if (typeof(Storage) !== "undefined") {
+        let produtos = localStorage.getItem("produtos");
+        if (produtos == null) produtos = []; // Nenhum produto ainda foi cadastrado
+        else produtos = JSON.parse(produtos);
+        produtos.push(novoProduto); // Adiciona um novo produto
+        localStorage.setItem("produtos",JSON.stringify(produtos))
+        alert("Foram cadastradas com sucesso "+qtidade+" unidades do produto "+ produto+"!");
+        atualizarTotalEstoque("totalEstoque");
+        location.reload();
+    } 
+}
+function atualizarTotalEstoque(idCampo) {
+   
+    localStorage.setItem("totalEstoque",++document.getElementById(idCampo).innerHTML)
+}
+function carregarTotalEstoque(idCampo) {
+    if (typeof(Storage) !== "undefined") {
+        let totalEstoque = localStorage.getItem("totalEstoque");
+        if (totalEstoque == null) totalEstoque = 0;
+        document.getElementById(idCampo).innerHTML = totalEstoque;
+    }
+}
+function listarEstoque() {
+    if (typeof(Storage) !== "undefined") {
+        let produtos = localStorage.getItem("produtos");
+        document.write("<h1>Estoque:</h1>")
+        if (produtos == null)
+            document.write("<h3>Ainda não há nenhum item no estoque</h3>");
+        else {
+            produtos = JSON.parse(produtos);
+            produtos.forEach(produto => {
+                document.write("<ul>");
+                document.write("<li>Nome do produto: "+produto.nome+"</li>");
+                document.write("<li>Nome do produto: "+produto.usuario+"</li>");
+                document.write("<li>Código do produto: "+produto.data+"</li>");
+                document.write("<li>Quantidade no estoque: "+produto.quantidade+"</li>");
+                document.write("</ul>");
+            });
         }
-    
-        function abrirEstoque() {
-            esticar.classList.add("estoque-ativado");
-            formulario.classList.add("form-esquerda");
-            esticar.classList.remove("estoque-1");
-            formulario.classList.remove("formulario");
-            botaoEst.value = "Fechar estoque";
-            var aberto = true;
-        }
-        function fecharEstoque() {
-            botaoEst.value = "Ver estoque";
-            esticar.classList.add("estoque-1");
-            formulario.classList.add("formulario");
-            esticar.classList.remove("estoque-ativado");
-            formulario.classList.remove("form-esquerda");
-            botaoEst.value = "Ver estoque";
-            var aberto = false
-        }
+    }  
+}
     </script>
 </body>
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,7 +20,7 @@
             <ul>
                 <li><a href="HomeProfessor.html">Home</a></li>
                 <li><a href="manutencaoLab.html">Manutenção do Laboratório</a></li>
-                <li><a href="agendamentoAnfi.html" class="active">Agendamento de Anfiteatro</a></li>
+                <li><a href="agendamentoAnfi.html" class="active">Agendamento do Anfiteatro</a></li>
                 <li><a href="emprestimoEqui.html">Empréstimo de Equipamento</a></li>
                 <li><a href="chegadaAtrasada.html">Chegada Atrasada e Saída</a></li>
                 <li><a href="controleEstoque.html">Controle de Estoque</a></li>
@@ -33,52 +33,148 @@
             <div></div>
         </label>
     </header>
+    <section>
+
+    </section>
     <div class="titleAnfi">
         <h1>Faça o agendamento do anfiteatro</h1>
     </div>
     <div class="formAnfi">
         <div class="posAnfi">
-            <div>
-                <label>Nome: </label>
-                <input type="text" name="">
+            <form action="">
+                <div>
+                    <label>Nome: </label>
+                    <input type="text" name="nome">
+                </div>
+                <div>
+                    <label>Matéria: </label>
+                    <input type="text" name="materia"> 
+                </div>
+                <div>
+                    <label>Turma: </label>
+                    <input type="text" name="turma"> 
+                </div>
+                <div>
+                    <label>Periodo: </label>
+                    <select>
+                        <option value="1">Manhã</option>
+                        <option value="2">Tarde</option>
+                        <option value="3">Noite</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label>Selecione a data:</label>
+                    <input type="date" name="data">
+                </div>
+                <div>
+                    <label>Horario de ínicio:</label>
+                    <input type="time" name="horainicio">
+                    <label>Horario de término:</label>
+                    <input type="time" name="horasaida">
+                </div>
+                <div class="anfiEquip">
+                    <label>Equipamentos utilizados: </label>
+                    <button type="button" value="Equip" onclick="abrirEquip()">Escolha os equipamentos</button>
+                </div>
+                <div class="anfiButton"> 
+                    <button type="button" value="Enviar" onclick="enviar()">ENVIAR</button>
+                    <button type="reset">LIMPAR</button>
+                </div>
+            </form>
+        <div class="imgAnfi" id="imgAnfi">
+            <img src="./img/agenda.png" alt="">
+        </div>
+        <div class="equipamentos" id="equipamentos">
+            <div class="equip-1" id="equip" onclick="selecionado()">
+                <img src="./img/projetor.png" alt="">
+                <h2>Projetor</h2>
+                <div class="check" id="caixaEquip">
+                    <img src="./img/certin.png" alt="">
+                </div>
             </div>
-            <div>
-                <label>Matéria: </label>
-                <input type="text" name=""> 
+            <div class="equip-1" onclick="selecionado1()">
+                <img src="./img/televisao.png" alt="">
+                <h2>Televisão</h2>
+                <div class="check" id="caixaEquip1">
+                    <img src="./img/certin.png" alt="">
+                </div>
             </div>
-            <div>
-                <label>Turma: </label>
-                <input type="text" name=""> 
-            </div>
-            <div>
-                <label>Periodo: </label>
-                <select>
-                    <option value="1">Manhã</option>
-                    <option value="2">Tarde</option>
-                    <option value="3">Noite</option>
-                </select>
-            </div>
-            <div>
-                <label>Equipamentos utilizados: </label>
-                <button type="button">Escolha o equipamento</button>
-            </div>
-            <div>
-                <label>Selecione a data:</label>
-                <input type="date">
-            </div>
-            <div>
-                <label>Horario de ínicio:</label>
-                <input type="time">
-            </div>
-            <div>
-                <label>Horario de saída:</label>
-                <input type="time">
-            </div>
-            <div>
-                <button>Enviar</button>
-                <button>Limpar</button>
+            <div class="equip-1" onclick="selecionado2()">
+                <img src="./img/computador.png" alt="">
+                <h2>PC</h2>
+                <div class="check" id="caixaEquip2">
+                    <img src="./img/certin.png" alt="">
+                </div>
             </div>
         </div>
     </div>
+    <div class="sumir"></div>
+    <div class = "popuptheo" id = "popuptheo">
+        <img src = ".\img\certin.png" style="margin-bottom: 10px; width: 90px;">
+        <p>Seu relatório foi enviado</p>
+        <input type="button" value="Fechar" onclick="fechar()" style="border-radius: 50px; padding: 10px; background-color: rgb(194, 150, 235); margin-top: 5px;">
+    </div>
+    <script>
+        let modoEquip = document.getElementById("imgAnfi")
+        let equipamentos = document.getElementById("equipamentos")
+        var abertoEquip = 0;
+        function abrirEquip() {
+            if (abertoEquip == 0 ) {
+                modoEquip.classList.add("imgAnfi-baixo")
+                equipamentos.classList.add("equipamentos-ativado")
+                abertoEquip = 1
+            }else {
+                modoEquip.classList.remove("imgAnfi-baixo")
+                equipamentos.classList.remove("equipamentos-ativado")
+                abertoEquip = 0
+            }
+        }
+    </script>
+    <script>
+        let selecao = document.getElementById("caixaEquip")
+        let selecao1 = document.getElementById("caixaEquip1")
+        let selecao2 = document.getElementById("caixaEquip2")
+        let selecaobox = document.getElementsById("equip")
+        var aberto = 0;
+        var aberto1 = 0
+        var aberto2 = 0
+        function selecionado() {
+            if (aberto == 0) {
+                selecao.classList.add("check-select")
+                aberto = 1
+            }else {
+                selecao.classList.remove("check-select")
+                aberto = 0
+            }
+        }
+        function selecionado1() {
+            if (aberto1 == 0) {
+                selecao1.classList.add("check-select")
+                aberto1 = 1
+            }else {
+                selecao1.classList.remove("check-select")
+                aberto1 = 0
+            }
+        }
+        function selecionado2() {
+            if (aberto2 == 0) {
+                selecao2.classList.add("check-select")
+                aberto2 = 1
+            }else {
+                selecao2.classList.remove("check-select")
+                aberto2 = 0
+            }
+        }
+    </script>
+    <script>
+        let = document.getElementById("popuptheo")
+        function enviar() {
+            popuptheo.classList.add ("open-popuptheo")
+        }
+        function fechar() {
+            popuptheo.classList.remove ("open-popuptheo")
+        }
+    </script>
 </body>
 </html>

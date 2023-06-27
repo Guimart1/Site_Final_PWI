@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-    <title>Empréstimo de Equipamento</title>
+    <title>Chegada Atrasada e Saída</title>
 </head>
 <body style="background-image: url(./img/rm222-mind-22.jpg); background-size: cover">
     <header>
@@ -15,16 +15,12 @@
         <input type="checkbox" id="nav_check" hidden>
         <nav>
             <div class="logo">
-                <img src="./img/Etec Logo.jpg" class="logo-icon">
+                <a href="index.html"><img src="./img/Etec Logo.jpg" class="logo-icon"></a>
             </div>
             <ul>
-                <li><a href="HomeProfessor.html">Home</a></li>
-                <li><a href="manutencaoLab.html">Manutenção do Laboratório</a></li>
-                <li><a href="agendamentoAnfi.html">Agendamento do Anfiteatro</a></li>
-                <li><a href="emprestimoEqui.html" class="active">Empréstimo de Equipamento</a></li>
-                <li><a href="chegadaAtrasada.html">Chegada Atrasada e Saída</a></li>
-                <li><a href="controleEstoque.html">Controle de Estoque</a></li>
-                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="HomeAluno.html">Home</a></li>
+                <li><a href="AlunoChegada.html" class="active">Chegada Atrasada e Saída</a></li>
+                <li><a href="AlunoFeedback.html">Feedback</a></li>
             </ul>
         </nav>
         <label for="nav_check" class="resp">
@@ -34,16 +30,19 @@
         </label>
     </header>
     <section>
-        <div class = "desc" style="height: 64%;"> 
-        <h2 class = "title-desc" style = "font-size: 40px; text-align: center;"> Empréstimo de Equipamento</h2>
+        <div class = "desc" style="height: 70%;"> 
+        <h2 class = "title-desc" style = "font-size: 40px; text-align: center;"> Controle de Entrada e Saída</h2>
         <div class = "descmanutencao">
             <form action="form_enviado">
-                <p> Insira seu nome: <input type="text" name="nome" id="nome"></p>
-                <p> Insira a data do empréstimo: <input type="date" name="data" id="data"></p>
-                <p> Horário de retirada: <input type="time" name="horaretirada" id="horaretirada"> Horário de Devolução: <input type="time" name="horadevelve" id="horadevolve"></p>
+                <p> Nome do aluno: <input type="text" name="nome" id="nome"></p>
+                <p> Insira a data: <input type="date" name="data" id="data"></p>
+                <p style="margin-left: 10%;"> Entrada: 
+                <br> Bloco 1 <input type="radio" name="bloco" id="b1" style="margin: 5px;"> Bloco 2 <input type="radio" name="bloco" id="b2" style="margin: 5px;"></p>
+                <p> Caso queira expecificar o horario de entrada: <input type="time" name="horaentrada" id="horaentrada"> </p>
+                <p style="margin-left: 10%;"> Saída: <br> Bloco 3 <input type="radio" name="bloco" id="b3" style="margin: 5px;"> Bloco 4 <input type="radio" name="bloco" id="b4" style="margin: 5px;"></p>
+                <p> Caso queira expecificar o horario de saída: <input type="time" name="horasaida" id="horasaida"></p>
                 <p> Insira o curso: <input type="text" name="curso" id="curso"></p>
-                <p> Insira a turma que utilizará os equipamentos: <input type="text" name="turma" id="turma"></p>
-                <p> Insira o(s) equipamento(s) retirado(s): <br><textarea name="equipamentos" id="equipamentos" cols="100" rows="5"></textarea>  </p>
+                <p> Insira a turma: <input type="text" name="turma" id="turma"></p>
                 <input type="button" value="Enviar" style="margin-top: 10px; padding: 15px; background-color: rgb(194, 150, 235);" onclick="enviar()">
             </form>
         </div>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,7 +20,7 @@
             <ul>
                 <li><a href="HomeProfessor.html">Home</a></li>
                 <li><a href="manutencaoLab.html" class="active">Manutenção do Laboratório</a></li>
-                <li><a href="agendamentoAnfi.html">Agendamento de Anfiteatro</a></li>
+                <li><a href="agendamentoAnfi.html">Agendamento do Anfiteatro</a></li>
                 <li><a href="emprestimoEqui.html">Empréstimo de Equipamento</a></li>
                 <li><a href="chegadaAtrasada.html">Chegada Atrasada e Saída</a></li>
                 <li><a href="controleEstoque.html">Controle de Estoque</a></li>
@@ -33,5 +33,38 @@
             <div></div>
         </label>
     </header>
+    <section> 
+        <div class = "desc" style="height: 60%;"> 
+        <h2 class = "title-desc" style = "font-size: 40px; text-align: center;"> Manutenção de Laboratório</h2>
+        <div class = "descmanutencao">
+        <form action="form_enviado">
+        <p> Insira seu nome: <input type = "text" placeholder = "Nome"> </p>
+        <p> Descreva o problema: <br> <textarea name="prob" id="prob" cols="150" rows="10" placeholder=" Descrição"></textarea> </p>
+        <p> Insira o laboratório: <input type="text" list="labs" style="width: 50px;">
+        <datalist id = "labs"> 
+            <option value="1"></option>
+            <option value="2"></option>
+            <option value="3"></option>
+            <option value="4"></option>
+            <option value="5"></option>
+            <option value="6"></option>
+        </datalist> </p>
+        <input type="button" value="Enviar" style="margin-top: 15px; padding: 15px; background-color: rgb(194, 150, 235);" onclick="enviar()">
+        </form> </div>
+        <div class = "popuptheo" id = "popuptheo">
+        <img src = ".\img\certin.png" style="margin-bottom: 10px;">
+        <p>Seu relatório foi enviado</p>
+        <input type="button" value="Fechar" onclick="fechar()" style="border-radius: 50px; padding: 10px; background-color: rgb(194, 150, 235); margin-top: 5px;">
+        </div>
+    </section>
+    <script>
+        let = document.getElementById("popuptheo")
+        function enviar() {
+            popuptheo.classList.add ("open-popuptheo")
+        }
+        function fechar() {
+            popuptheo.classList.remove ("open-popuptheo")
+        }
+    </script>
 </body>
 </html>
